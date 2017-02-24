@@ -7,29 +7,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var homePage_module_1 = require("./homePage/homePage.module");
-var app_routing_module_1 = require("./app-routing.module");
-var AppModule = (function () {
-    function AppModule() {
+var router_1 = require("@angular/router");
+var homePage_component_1 = require("./homePage.component");
+var homepageRoutes = [
+    {
+        path: 'home',
+        component: homePage_component_1.HomePageComponent
     }
-    return AppModule;
+];
+var homePageRoutigModule = (function () {
+    function homePageRoutigModule() {
+    }
+    return homePageRoutigModule;
 }());
-AppModule = __decorate([
+homePageRoutigModule = __decorate([
     core_1.NgModule({
         imports: [
-            app_routing_module_1.AppRoutingModule,
-            platform_browser_1.BrowserModule,
-            homePage_module_1.HomePageModule
-        ],
-        declarations: [
-            app_component_1.AppComponent
-        ],
-        bootstrap: [
-            app_component_1.AppComponent
+            router_1.RouterModule.forChild(homepageRoutes)
         ]
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], homePageRoutigModule);
+exports.homePageRoutigModule = homePageRoutigModule;
+//# sourceMappingURL=home-page-routing.module.js.map
