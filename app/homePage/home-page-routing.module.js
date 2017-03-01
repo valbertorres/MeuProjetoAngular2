@@ -9,10 +9,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var homePage_component_1 = require("./homePage.component");
+var produto_component_1 = require("./../produtos/produto.component");
 var homepageRoutes = [
     {
         path: 'home',
         component: homePage_component_1.HomePageComponent
+    },
+    {
+        path: 'home/produto',
+        component: produto_component_1.ProdutoComponent
     }
 ];
 var homePageRoutigModule = (function () {

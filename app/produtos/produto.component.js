@@ -7,18 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var common_1 = require("@angular/common");
-var ProdutoModule = (function () {
-    function ProdutoModule() {
+var ProdutoComponent = (function () {
+    function ProdutoComponent() {
     }
-    return ProdutoModule;
+    return ProdutoComponent;
 }());
-ProdutoModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            common_1.CommonModule
+ProdutoComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'produto-Component',
+        templateUrl: 'produto-component.html',
+        styleUrls: [
+            'produto.css'
         ]
     })
-], ProdutoModule);
-exports.ProdutoModule = ProdutoModule;
-//# sourceMappingURL=produto.module.js.map
+], ProdutoComponent);
+exports.ProdutoComponent = ProdutoComponent;
+//# sourceMappingURL=produto.component.js.map
