@@ -8,7 +8,7 @@
     <a class="nav-link" data-toggle="tab" href="#cadastro" role="tab">Cadastrar</a>
   </li>
   <li class="nav-item" id="btnSair">
-    <button class="btn btn-secondary" routerLink="/" >sair</button>
+    <button class="btn btn-secondary" (click)="goBack()" ><span>&times;</span></button>
   </li>
 </ul>
 
@@ -16,14 +16,10 @@
 <div class="tab-content" id="cadastroProduto">
   <div class="tab-pane active" id="lista" role="tabpanel">
      <h2>Lista De Produtos</h2>
+     <lista-produto></lista-produto>
   </div>
   <div class="tab-pane" id="cadastro" role="tabpanel">
-     <form class="form-inline">
-  <div class="form-group">
-        <label for="codigo">Código:</label>
-        <input type="text" id="codigo" class="form-control mx-sm-3" >
-  </div>
-</form>
+    <cadastro-produto></cadastro-produto> 
   </div>
 </div>
 

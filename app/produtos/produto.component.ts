@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 
+import { Location } from '@angular/common'
+
 @Component({
     moduleId : module.id,
     selector : 'produto-Component',
@@ -8,4 +10,15 @@ import {Component} from '@angular/core';
         'produto.css'
     ]
 })
-export class ProdutoComponent{}
+export class ProdutoComponent{
+
+constructor(
+    private location : Location
+){
+    
+}
+
+    goBack():void{
+        this.location.back();
+    }
+}

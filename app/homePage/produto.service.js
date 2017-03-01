@@ -10,26 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var common_1 = require("@angular/common");
-var ProdutoComponent = (function () {
-    function ProdutoComponent(location) {
-        this.location = location;
+require("rxjs/add/operator/toPromise");
+var http_1 = require("@angular/http");
+var ProdutoService = (function () {
+    function ProdutoService(http) {
+        this.http = http;
+        this.produtoUrl = 'app/';
     }
-    ProdutoComponent.prototype.goBack = function () {
-        this.location.back();
+    ProdutoService.prototype.getfindAll = function () {
+        return this.http.get(this.produtoUrl)
+            .toPromise()
+            .then(function (response) { return response.json().data; })
+            .catch();
     };
-    return ProdutoComponent;
+    ProdutoService.prototype.handleErr = function (err) {
+        console.log(err);
+        return Promise.reject(err.message || err);
+    };
+    return ProdutoService;
 }());
-ProdutoComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'produto-Component',
-        templateUrl: 'produto-component.html',
-        styleUrls: [
-            'produto.css'
-        ]
-    }),
-    __metadata("design:paramtypes", [common_1.Location])
-], ProdutoComponent);
-exports.ProdutoComponent = ProdutoComponent;
-//# sourceMappingURL=produto.component.js.map
+ProdutoService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], ProdutoService);
+exports.ProdutoService = ProdutoService;
+//# sourceMappingURL=produto.service.js.map

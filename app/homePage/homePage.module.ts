@@ -3,6 +3,8 @@ import {CommonModule} from '@angular/common'
 
 import {HomePageComponent} from './homePage.component';
 import {ProdutoComponent} from './../produtos/produto.component';
+import {CadastroProdutoComponent} from './../produtos/cadastro-produto.component';
+import {ListaProdutoComponent} from './../produtos/lista-produto.component'
 
 import {homePageRoutigModule} from './home-page-routing.module';
 
@@ -12,12 +14,17 @@ imports: [
     homePageRoutigModule
     ],
     declarations : [
+        CadastroProdutoComponent,
         HomePageComponent,
-        ProdutoComponent
+        ProdutoComponent,
+        ListaProdutoComponent
+        
     ],
     exports : [
+        CadastroProdutoComponent,
         HomePageComponent,
-        ProdutoComponent
+        ProdutoComponent,
+        ListaProdutoComponent
     ]
 })
 export class HomePageModule{}

@@ -10,26 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var common_1 = require("@angular/common");
-var ProdutoComponent = (function () {
-    function ProdutoComponent(location) {
-        this.location = location;
+var produto_service_1 = require("./../homePage/produto.service");
+var ListaProdutoComponent = (function () {
+    function ListaProdutoComponent(produtoService) {
+        this.produtoService = produtoService;
+        this.produtos = [];
     }
-    ProdutoComponent.prototype.goBack = function () {
-        this.location.back();
+    ListaProdutoComponent.prototype.ngOninit = function () {
+        var _this = this;
+        this.produtoService.getfindAll()
+            .then(function (produtos) {
+            _this.produtos = produtos;
+        }).catch(function (err) { return console.log(err); });
     };
-    return ProdutoComponent;
+    return ListaProdutoComponent;
 }());
-ProdutoComponent = __decorate([
+ListaProdutoComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'produto-Component',
-        templateUrl: 'produto-component.html',
-        styleUrls: [
-            'produto.css'
-        ]
+        selector: 'lista-produto',
+        templateUrl: 'lista-produto.component.html'
     }),
-    __metadata("design:paramtypes", [common_1.Location])
-], ProdutoComponent);
-exports.ProdutoComponent = ProdutoComponent;
-//# sourceMappingURL=produto.component.js.map
+    __metadata("design:paramtypes", [produto_service_1.ProdutoService])
+], ListaProdutoComponent);
+exports.ListaProdutoComponent = ListaProdutoComponent;
+//# sourceMappingURL=lista-produto.component.js.map

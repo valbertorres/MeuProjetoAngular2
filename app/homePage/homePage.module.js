@@ -10,6 +10,8 @@ var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var homePage_component_1 = require("./homePage.component");
 var produto_component_1 = require("./../produtos/produto.component");
+var cadastro_produto_component_1 = require("./../produtos/cadastro-produto.component");
+var lista_produto_component_1 = require("./../produtos/lista-produto.component");
 var home_page_routing_module_1 = require("./home-page-routing.module");
 var HomePageModule = (function () {
     function HomePageModule() {
@@ -23,12 +25,16 @@ HomePageModule = __decorate([
             home_page_routing_module_1.homePageRoutigModule
         ],
         declarations: [
+            cadastro_produto_component_1.CadastroProdutoComponent,
             homePage_component_1.HomePageComponent,
-            produto_component_1.ProdutoComponent
+            produto_component_1.ProdutoComponent,
+            lista_produto_component_1.ListaProdutoComponent
         ],
         exports: [
+            cadastro_produto_component_1.CadastroProdutoComponent,
             homePage_component_1.HomePageComponent,
-            produto_component_1.ProdutoComponent
+            produto_component_1.ProdutoComponent,
+            lista_produto_component_1.ListaProdutoComponent
         ]
     })
 ], HomePageModule);

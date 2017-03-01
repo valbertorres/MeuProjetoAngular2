@@ -19,6 +19,9 @@ const homepageRoutes : Routes = [
 @NgModule({
     imports : [
         RouterModule.forChild(homepageRoutes)
+    ],
+    exports : [
+        RouterModule
     ]
 })
 export class homePageRoutigModule{}
