@@ -10,6 +10,15 @@ var core_1 = require("@angular/core");
 var CadastroProdutoComponent = (function () {
     function CadastroProdutoComponent() {
     }
+    CadastroProdutoComponent.prototype.ngOnInit = function () {
+    };
+    Object.defineProperty(CadastroProdutoComponent.prototype, "Produto", {
+        set: function (produto) {
+            var listaProduto = produto;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return CadastroProdutoComponent;
 }());
 CadastroProdutoComponent = __decorate([

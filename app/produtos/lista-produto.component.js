@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var produto_service_1 = require("./produto.service");
+var cadastro_produto_component_1 = require("./cadastro-produto.component");
 var ListaProdutoComponent = (function () {
     function ListaProdutoComponent(produtoService) {
         this.produtoService = produtoService;
@@ -22,6 +23,11 @@ var ListaProdutoComponent = (function () {
             .then(function (produtos) {
             _this.produtos = produtos;
         }).catch(function (err) { return console.log(err); });
+    };
+    ListaProdutoComponent.prototype.getListaProduto = function (produto) {
+        console.log(produto);
+        var listaProduto = new cadastro_produto_component_1.CadastroProdutoComponent();
+        listaProduto.Produto = produto;
     };
     return ListaProdutoComponent;
 }());

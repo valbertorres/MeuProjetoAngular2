@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Produto } from './produtos.model';
 import { ProdutoService } from './produto.service';
 
+import { CadastroProdutoComponent } from './cadastro-produto.component';
+
 
 @Component({
     moduleId : module.id,
@@ -10,8 +12,8 @@ import { ProdutoService } from './produto.service';
     templateUrl : 'lista-produto.component.html'
 })
 export class ListaProdutoComponent implements OnInit{
-
-    produtos : Produto[] = [];
+    
+    private produtos : Produto[] = [];
 
     constructor(
       private  produtoService : ProdutoService  
@@ -23,6 +25,14 @@ export class ListaProdutoComponent implements OnInit{
             this.produtos = produtos;
         } ).catch(err => console.log(err));
     }
+
+    getListaProduto(produto : Produto[]):void{
+        console.log(produto);
+        let listaProduto:CadastroProdutoComponent = new CadastroProdutoComponent();
+        listaProduto.Produto = produto;
+    }
+
+    
 
 
 }

@@ -13,10 +13,6 @@ const homepageRoutes : Routes = [
     {
         path :'home/produto',
         component : ProdutoComponent
-    },
-    {
-        path : "home/produto/:codigo",
-        component : ProdutoComponent
     }
 ]
 

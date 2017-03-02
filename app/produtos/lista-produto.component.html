@@ -10,7 +10,7 @@
             </tr>    
         </thead>
         <tbody id="table">
-            <tr *ngFor = "let p of produtos " >
+            <tr *ngFor = "let p of produtos " (click)="getListaProduto(p)">
                  <td>{{ p.codigo }}</td>
                  <td>{{ p.descricao }}</td>
                  <td>{{ p.grupo }}</td>
