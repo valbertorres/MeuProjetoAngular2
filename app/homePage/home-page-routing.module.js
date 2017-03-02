@@ -18,6 +18,10 @@ var homepageRoutes = [
     {
         path: 'home/produto',
         component: produto_component_1.ProdutoComponent
+    },
+    {
+        path: "home/produto/:codigo",
+        component: produto_component_1.ProdutoComponent
     }
 ];
 var homePageRoutigModule = (function () {

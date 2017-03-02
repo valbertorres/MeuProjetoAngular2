@@ -15,17 +15,17 @@ var http_1 = require("@angular/http");
 var ProdutoService = (function () {
     function ProdutoService(http) {
         this.http = http;
-        this.produtoUrl = 'app/';
+        this.produtoUrl = 'app/produtos';
     }
-    ProdutoService.prototype.getfindAll = function () {
+    ProdutoService.prototype.getFidAll = function () {
         return this.http.get(this.produtoUrl)
             .toPromise()
             .then(function (response) { return response.json().data; })
             .catch();
     };
-    ProdutoService.prototype.handleErr = function (err) {
-        console.log(err);
-        return Promise.reject(err.message || err);
+    ProdutoService.prototype.handle = function (err) {
+        console.log('err', err);
+        return Promise.reject(err.mesage || err);
     };
     return ProdutoService;
 }());

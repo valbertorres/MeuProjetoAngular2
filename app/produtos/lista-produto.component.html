@@ -2,18 +2,20 @@
    <table class="table table-small-font table-bordered table-striped">
         <thead>
             <tr>
-                <th>Produto</th>
                 <th>Código</th>
                 <th>Descrição</th>
-                <th>Estoque</th>
                 <th>Grupo</th>
                 <th>Subgrupo</th>
+                <th>Estoque</th>
             </tr>    
         </thead>
         <tbody id="table">
-            <tr *ngFor= "let p of produtos">
+            <tr *ngFor = "let p of produtos " >
                  <td>{{ p.codigo }}</td>
-                
+                 <td>{{ p.descricao }}</td>
+                 <td>{{ p.grupo }}</td>
+                 <td>{{ p.subgrupo }}</td>
+                 <td>{{ p.estoque }}</td>
             </tr>
         </tbody>
     </table>

@@ -8,11 +8,21 @@ import {HomePageModule} from './homePage/homePage.module';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { HttpModule } from '@angular/http'
+
+import {InMemoryWebApiModule } from 'angular-in-memory-web-api';
+
+import { InMemoryDataService } from './in-memory.service';
+
+import { ProdutoService } from './produtos/produto.service';
+
 @NgModule({
     imports : [
         AppRoutingModule,
         BrowserModule,
-        HomePageModule 
+        HomePageModule,
+        HttpModule,
+        InMemoryWebApiModule.forRoot(InMemoryDataService)
         ],
 
     declarations : [
@@ -20,6 +30,9 @@ import { AppRoutingModule } from './app-routing.module';
         ],
     bootstrap: [
         AppComponent
+        ],
+        providers: [
+            ProdutoService
         ]
 })
 export class AppModule{}

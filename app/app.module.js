@@ -11,6 +11,10 @@ var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var homePage_module_1 = require("./homePage/homePage.module");
 var app_routing_module_1 = require("./app-routing.module");
+var http_1 = require("@angular/http");
+var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
+var in_memory_service_1 = require("./in-memory.service");
+var produto_service_1 = require("./produtos/produto.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -21,13 +25,18 @@ AppModule = __decorate([
         imports: [
             app_routing_module_1.AppRoutingModule,
             platform_browser_1.BrowserModule,
-            homePage_module_1.HomePageModule
+            homePage_module_1.HomePageModule,
+            http_1.HttpModule,
+            angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_service_1.InMemoryDataService)
         ],
         declarations: [
             app_component_1.AppComponent
         ],
         bootstrap: [
             app_component_1.AppComponent
+        ],
+        providers: [
+            produto_service_1.ProdutoService
         ]
     })
 ], AppModule);

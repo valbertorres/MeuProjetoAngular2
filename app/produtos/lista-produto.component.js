@@ -10,15 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var produto_service_1 = require("./../homePage/produto.service");
+var produto_service_1 = require("./produto.service");
 var ListaProdutoComponent = (function () {
     function ListaProdutoComponent(produtoService) {
         this.produtoService = produtoService;
         this.produtos = [];
     }
-    ListaProdutoComponent.prototype.ngOninit = function () {
+    ListaProdutoComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.produtoService.getfindAll()
+        this.produtoService.getFidAll()
             .then(function (produtos) {
             _this.produtos = produtos;
         }).catch(function (err) { return console.log(err); });
